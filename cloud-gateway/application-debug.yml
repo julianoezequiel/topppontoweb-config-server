@@ -1,3 +1,7 @@
 external-config:
   greeting: "Olá"
   default-value: "Mundo"
+management:
+  tracing:    
+    sampling:
+      probability: 1.0
