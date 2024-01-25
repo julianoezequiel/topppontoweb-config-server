@@ -1,0 +1,3 @@
+external-config:
+  greeting: "Olá"
+  default-value: "Mundo"
