@@ -1,0 +1,103 @@
+baseUrlApiApp: http://localhost:8099/apitopponto/
+baseUrlApiAuth: http://localhost:8099/apitopponto/
+baseUrlApiBackground: http://localhost:8099/apitopponto/
+baseUrlApiBackgroundCalculo: http://localhost:8099/apibackground_calculo/
+baseUrlApiCadastro: http://localhost:8099/apitopponto/
+baseUrlApiCalculo: http://localhost:8099/apitopponto/
+baseUrlApiColeta: http://localhost:8099/apitopponto/
+baseUrlApiGerenciamento: http://localhost:8085/ApiGerenciamento/
+baseUrlApiImport: http://localhost:8099/apitopponto/
+baseUrlApiRelatorio: http://localhost:8099/apitopponto/
+baseUrlApiRepHttpc: http://localhost:8087/rephttpc/
+baseUrlApiRepHttpcAuth: http://localhost:8088/apiauth/
+email:
+  host: 10.10.253.208
+health:
+  servico:
+    minutos: 5
+    nome: apitopponto
+    redis: true
+hostRedir: localhost/rephttpc
+portaRedir: 8079
+proxy:
+  host: 10.0.0.7
+  password: TpW@T04
+  port: 8080
+  user: toppontoweb
+server:
+  port: 8086
+  ssl:
+    ciphers: 'TLS_RSA_WITH_AES_128_CBC_SHA '
+    enabled: true
+    key-alias: selfsigned
+    key-password: Abc1234
+    key-store: classpath:keystore.jks
+    key-store-password: Abc1234
+    key-store-type: JKS
+    protocol: TLS
+servidor2:
+  dominio: topdata.com.br:8090
+  protocolo: http://
+spring:
+  cache:
+    type: redis
+  cloud:
+    azure:
+      storage:
+        container-name: topponto-local
+  datasource:
+    databasename: TopPontoWeb_Gerenciamento
+    password: Abc123456
+    server: jdbc:sqlserver://ALFA120\SQLEXPRESS
+    url: jdbc:sqlserver://ALFA120\SQLEXPRESS;databaseName=TopPontoWeb_Gerenciamento
+    url-base: jdbc:sqlserver://ALFA120\SQLEXPRESS;databaseName=
+    username: sa
+  kafka:
+    bootstrap-servers: 10.10.253.214:19092
+    consumer:
+      auto-offset-reset: earliest
+      group-id: group-id
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            add:
+              type:
+                headers: false
+            trusted:
+              packages: '*'
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    listener:
+      ack-mode: manual
+    producer:
+      group:
+        id: group-id
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  redis:
+    host: 10.10.253.214
+    password: Abc1234
+    port: 6379
+    ssl: false
+topponto:
+  tabelaPendencias: topponto_local
+flyway:
+    url: jdbc:sqlserver://ALFA120\SQLEXPRESS;databaseName=TopPontoWeb_Gerenciamento    
+    user: sa
+    password: Abc123456
+resilience4j:
+  bulkhead:
+    instances:
+      default:
+        max-concurrent-calls: 10
+  ratelimiter:
+    instances:
+      default:
+        limit-for-period: 2
+        limit-refresh-period: 10s
+  retry:
+    instances:
+      foo-bar:
+        max-attempts: 5
+        wait-duration: 1s
+        enable-exponential-backoff: true  
