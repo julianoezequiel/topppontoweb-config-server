@@ -24,8 +24,8 @@ proxy:
   password: TpW@T04
   port: 8080
   user: toppontoweb
-# server:
-#   port: 8085
+server:
+  port: 8082
 #   ssl:
 #     ciphers: 'TLS_RSA_WITH_AES_128_CBC_SHA '
 #     enabled: true
