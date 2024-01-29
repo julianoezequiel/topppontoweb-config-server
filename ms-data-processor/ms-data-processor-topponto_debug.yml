@@ -24,17 +24,17 @@ proxy:
   password: TpW@T04
   port: 8080
   user: toppontoweb
-server:
-  port: 8084
-  ssl:
-    ciphers: 'TLS_RSA_WITH_AES_128_CBC_SHA '
-    enabled: true
-    key-alias: selfsigned
-    key-password: Abc1234
-    key-store: classpath:keystore.jks
-    key-store-password: Abc1234
-    key-store-type: JKS
-    protocol: TLS
+# server:
+#   port: 8084
+#   ssl:
+#     ciphers: 'TLS_RSA_WITH_AES_128_CBC_SHA '
+#     enabled: true
+#     key-alias: selfsigned
+#     key-password: Abc1234
+#     key-store: classpath:keystore.jks
+#     key-store-password: Abc1234
+#     key-store-type: JKS
+#     protocol: TLS
 servidor2:
   dominio: topdata.com.br:8090
   protocolo: http://
