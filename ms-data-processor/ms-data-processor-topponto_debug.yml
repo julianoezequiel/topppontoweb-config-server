@@ -26,15 +26,15 @@ proxy:
   user: toppontoweb
 server:
   port: 8083
-#   ssl:
-#     ciphers: 'TLS_RSA_WITH_AES_128_CBC_SHA '
-#     enabled: true
-#     key-alias: selfsigned
-#     key-password: Abc1234
-#     key-store: classpath:keystore.jks
-#     key-store-password: Abc1234
-#     key-store-type: JKS
-#     protocol: TLS
+  ssl:
+    ciphers: 'TLS_RSA_WITH_AES_128_CBC_SHA '
+    enabled: true
+    key-alias: selfsigned
+    key-password: Abc1234
+    key-store: classpath:keystore.jks
+    key-store-password: Abc1234
+    key-store-type: JKS
+    protocol: TLS
 servidor2:
   dominio: topdata.com.br:8090
   protocolo: http://
