@@ -46,10 +46,10 @@ spring:
       storage:
         container-name: topponto-local
   datasource:
-    databasename: TopPontoWeb_Gerenciamento
+    databasename: _Gerenciamento
     password: Abc123456
     server: jdbc:sqlserver://ALFA120\SQLEXPRESS
-    url: jdbc:sqlserver://ALFA120\SQLEXPRESS;databaseName=TopPontoWeb_Gerenciamento
+    url: jdbc:sqlserver://ALFA120\SQLEXPRESS;databaseName=_Gerenciamento
     url-base: jdbc:sqlserver://ALFA120\SQLEXPRESS;databaseName=
     username: sa
   kafka:
@@ -82,7 +82,7 @@ spring:
 topponto:
   tabelaPendencias: topponto_local
 flyway:
-    url: jdbc:sqlserver://ALFA120\SQLEXPRESS;databaseName=TopPontoWeb_Gerenciamento    
+    url: jdbc:sqlserver://ALFA120\SQLEXPRESS;databaseName=_Gerenciamento    
     user: sa
     password: Abc123456
 resilience4j:
