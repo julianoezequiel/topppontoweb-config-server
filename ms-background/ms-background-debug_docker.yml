@@ -1,13 +1,13 @@
-baseUrlApiApp: http://localhost:8099/apitopponto/
-baseUrlApiAuth: http://localhost:8099/apitopponto/
-baseUrlApiBackground: http://localhost:8099/apitopponto/
-baseUrlApiBackgroundCalculo: http://localhost:8099/apibackground_calculo/
-baseUrlApiCadastro: http://localhost:8099/apitopponto/
-baseUrlApiCalculo: http://localhost:8099/apitopponto/
-baseUrlApiColeta: http://localhost:8099/apitopponto/
+baseUrlApiApp: https://localhost:8765/MS-BACKGROUND/
+baseUrlApiAuth: https://localhost:8765/MS-BACKGROUND/
+baseUrlApiBackground: https://localhost:8765/MS-BACKGROUND/
+baseUrlApiBackgroundCalculo: https://localhost:8765/MS-BACKGROUND/
+baseUrlApiCadastro: https://localhost:8765/MS-BACKGROUND/
+baseUrlApiCalculo: https://localhost:8765/MS-BACKGROUND/
+baseUrlApiColeta: https://localhost:8765/MS-BACKGROUND/
 baseUrlApiGerenciamento: http://localhost:8085/ApiGerenciamento/
-baseUrlApiImport: http://localhost:8099/apitopponto/
-baseUrlApiRelatorio: http://localhost:8099/apitopponto/
+baseUrlApiImport: https://localhost:8765/MS-BACKGROUND/
+baseUrlApiRelatorio: https://localhost:8765/MS-BACKGROUND/
 baseUrlApiRepHttpc: http://localhost:8087/rephttpc/
 baseUrlApiRepHttpcAuth: http://localhost:8088/apiauth/
 email:
