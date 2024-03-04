@@ -48,12 +48,12 @@ spring:
   datasource:
     databasename: _Gerenciamento
     password: Abc123456
-    server: jdbc:sqlserver://10.0.7.186
-    url: jdbc:sqlserver://10.0.7.186;databaseName=_Gerenciamento
-    url-base: jdbc:sqlserver://10.0.7.186;databaseName=
+    server: jdbc:sqlserver://10.10.253.14
+    url: jdbc:sqlserver://10.10.253.14;databaseName=_Gerenciamento
+    url-base: jdbc:sqlserver://10.10.253.14;databaseName=
     username: sa
   kafka:
-    bootstrap-servers: 10.0.7.186:19092
+    bootstrap-servers: 10.10.253.14:3092
     consumer:
       auto-offset-reset: earliest
       group-id: group-id
@@ -75,14 +75,14 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   redis:
-    host: 10.0.7.186
+    host: 10.10.253.14
     password: Abc1234
     port: 6379
     ssl: false
 topponto:
   tabelaPendencias: topponto_local
 flyway:
-    url: jdbc:sqlserver://10.0.7.186;databaseName=_Gerenciamento    
+    url: jdbc:sqlserver://10.10.253.14;databaseName=_Gerenciamento    
     user: sa
     password: Abc123456
 resilience4j:
