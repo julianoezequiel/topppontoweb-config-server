@@ -1,9 +1,79 @@
-external-config:
-  greeting: "Olá"
-  default-value: "Mundo"
 management:
+  zipkin:
+    tracing:
+      endpoint: http://10.10.253.214:9411/api/v2/spans
   tracing:    
     sampling:
       probability: 1.0
-zipkin:
-    baseUrl: https://10.10.253.214:9411/
+ endpoints:
+    web:
+      exposure:
+        include: prometheus,health,metrics,info  
+eureka:
+  instance:
+    securePort: ${server.port}
+#    nonSecurePortEnabled: false
+#    securePortEnabled: true
+    leaseRenewalIntervalInSeconds: 7
+    leaseExpirationDurationInSeconds: 9
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+    register-with-eureka: true
+    fetch-registry: true
+    heartbeat-executor-thread-pool-size: 5
+    eureka-service-url-poll-interval-seconds: 10
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"    
+      discovery:
+        locator:
+          enabled: true   
+      httpclient:
+        ssl:
+          useInsecureTrustManager: true
+      routes:
+        
+      - id: ms-background
+        uri: lb://ms-background
+        predicates:
+        - Path=/ms-background/**
+#        filters:
+#          - SetPath=/lowercase/${lowercase(request.path.value)}
+
+      - id: ms-data-processor
+        uri: lb://ms-data-processor
+        predicates:
+        - Path=/ms-data-processor/**
+#        filters:
+#          - RewritePath=/ms-data-processor/(?<segment>.*), /ms-data-processor/${segment}
+
+      - id: ms-data-reader
+        uri: lb://ms-data-reader
+        predicates:
+        - Path=/ms-data-reader/**
+#        filters:
+#          - RewritePath=/ms-data-reader/(?<segment>.*), /ms-data-reader/${segment}
+
+      - id: ms-data-writer
+        uri: lb://ms-data-writer
+        predicates:
+        - Path=/ms-data-writer/**
+#        filters:
+#          - RewritePath=/ms-data-writer/(?<segment>.*), /ms-data-writer/${segment}
+
+      - id: cloud-gateway
+        uri: lb://cloud-gateway
+        predicates:
+        - Path=/v3/api-docs/**
+        filters:
+        - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
