@@ -5,6 +5,5 @@ management:
   tracing:    
     sampling:
       probability: 1.0
-spring:
-  zipkin:
-    baseUrl: https://10.10.253.214:9411/
+zipkin:
+  baseUrl: https://10.10.253.214:9411/
