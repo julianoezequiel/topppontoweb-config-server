@@ -48,9 +48,9 @@ spring:
   datasource:
     databasename: _Gerenciamento
     password: Abc123456
-    server: jdbc:sqlserver://ALFA120\\SQLEXPRESS
-    url: jdbc:sqlserver://ALFA120\\SQLEXPRESS;databaseName=_Gerenciamento
-    url-base: jdbc:sqlserver://ALFA120\\SQLEXPRESS;databaseName=
+    server: jdbc:sqlserver://ALFA120\\\SQLEXPRESS
+    url: jdbc:sqlserver://ALFA120\\\SQLEXPRESS;databaseName=_Gerenciamento
+    url-base: jdbc:sqlserver://ALFA120\\\SQLEXPRESS;databaseName=
     username: sa
   kafka:
     bootstrap-servers: 10.10.253.214:19092
@@ -80,11 +80,11 @@ spring:
     port: 6379
     ssl: false
   zipkin:
-    baseUrl: http://10.10.253.214:9411/api/v2/spans
+    baseUrl: http://10.10.253.214:9411/api/v2/spanss
 topponto:
   tabelaPendencias: topponto_local
 flyway:
-    url: jdbc:sqlserver://ALFA120\\SQLEXPRESS;databaseName=_Gerenciamento    
+    url: jdbc:sqlserver://ALFA120\\\SQLEXPRESS;databaseName=_Gerenciamento    
     user: sa
     password: Abc123456
 resilience4j:
