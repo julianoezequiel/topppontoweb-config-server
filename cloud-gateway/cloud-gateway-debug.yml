@@ -28,6 +28,8 @@ eureka:
     heartbeat-executor-thread-pool-size: 5
     eureka-service-url-poll-interval-seconds: 10
 spring:
+  rabbitmq: 
+        addresses: amqp://guest:guest@10.10.253.214:5672
   cloud:
     gateway:
       default-filters:
