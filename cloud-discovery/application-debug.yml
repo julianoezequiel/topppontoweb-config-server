@@ -1,0 +1,34 @@
+management:
+  tracing:    
+    sampling:
+      probability: 1.0
+spring:
+  zipkin:
+    baseUrl: https://10.10.253.214:9411/
+    management:
+ endpoints:
+    web:
+      cors:
+        allowed-methods: GET
+        allowed-origins: '*'
+      exposure:
+        include: prometheus,health,metrics,info  
+eureka:
+  instance:
+    hostname: localhost
+    securePort: ${server.port}
+    secureVirtualHostName: ${spring.application.name} 
+#    home-page-url: 'https://${eureka.instance.hostName}:${server.port}/info'
+#    healthCheckUrl: 'https://${eureka.instance.hostName}:${ server.port}/health'
+#    homePageUrl: 'https://${eureka.instance.hostName}:${server.port}/'
+    non-secure-port-enabled: true
+    secure-port-enabled: false
+    
+    metadataMap:
+       hostname : ${eureka.instance.hostname}
+       securePort: ${server.port}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
