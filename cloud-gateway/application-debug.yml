@@ -6,4 +6,4 @@ management:
     sampling:
       probability: 1.0
 zipkin:
-  baseUrl: https://10.10.253.214:9411/
+  baseUrl: "https://10.10.253.214:9411/"
