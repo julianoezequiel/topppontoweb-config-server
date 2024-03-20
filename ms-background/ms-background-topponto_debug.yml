@@ -80,7 +80,7 @@ spring:
     port: 6379
     ssl: false
   zipkin:
-    baseUrl: https://10.10.253.214:9411/
+    baseUrl: http://10.10.253.214:9411/api/v2/spans
 topponto:
   tabelaPendencias: topponto_local
 flyway:
