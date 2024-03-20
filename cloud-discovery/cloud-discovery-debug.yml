@@ -1,18 +1,17 @@
+spring:
+  zipkin:
+    baseUrl: https://10.10.253.214:9411/
 management:
   tracing:    
     sampling:
       probability: 1.0
-spring:
-  zipkin:
-    baseUrl: https://10.10.253.214:9411/
-    management:
- endpoints:
-    web:
-      cors:
-        allowed-methods: GET
-        allowed-origins: '*'
-      exposure:
-        include: prometheus,health,metrics,info  
+  endpoints:
+      web:
+        cors:
+          allowed-methods: GET
+          allowed-origins: '*'
+        exposure:
+          include: prometheus,health,metrics,info  
 eureka:
   instance:
     hostname: localhost
