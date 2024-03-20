@@ -12,6 +12,9 @@ management:
   endpoint:
     health:
       show-details: always
+spring:
+  rabbitmq: 
+        addresses: amqp://guest:guest@10.10.253.214:5672
     
 eureka:
   instance:
