@@ -79,8 +79,11 @@ spring:
     password: Abc1234
     port: 6379
     ssl: false
+  sleuth:
+    sampler:
+      probability: 1.0
   zipkin:
-    baseUrl: http://10.10.253.214:9411/api/v2/spanss
+    base-url: http://10.10.253.214:9411
 topponto:
   tabelaPendencias: topponto_local
 flyway:
