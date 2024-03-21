@@ -114,16 +114,37 @@ feign:
     enabled: false
     okhttp.enabled: true
 management:
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      cors:
+        allowed-methods: GET
+        allowed-origins: '*'
+      exposure:
+        include: prometheus,health,metrics,info
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      application: ${spring.application.name}
+# management:
   # zipkin:
   #   tracing:
   #     endpoint: http://10.10.253.214:9411/api/v2/spans
   # tracing:    
   #   sampling:
   #     probability: 1.0
-  endpoints:
-      web:
-        exposure:
-          include: prometheus,health,metrics,info  
-  endpoint:
-    health:
-      show-details: always
+  # endpoints:
+  #     web:
+  #       exposure:
+  #         include: prometheus,health,metrics,info  
+  # endpoint:
+  #   health:
+  #     show-details: always
