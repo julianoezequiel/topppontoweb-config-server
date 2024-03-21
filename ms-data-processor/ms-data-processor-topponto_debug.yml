@@ -103,3 +103,17 @@ resilience4j:
         max-attempts: 5
         wait-duration: 1s
         enable-exponential-backoff: true  
+management:
+  zipkin:
+    tracing:
+      endpoint: http://10.10.253.214:9411/api/v2/spans
+  tracing:    
+    sampling:
+      probability: 1.0
+  endpoints:
+      web:
+        exposure:
+          include: prometheus,health,metrics,info  
+  endpoint:
+    health:
+      show-details: always
