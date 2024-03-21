@@ -39,6 +39,8 @@ servidor2:
   dominio: topdata.com.br:8090
   protocolo: http://
 spring:
+  rabbitmq: 
+        addresses: amqp://guest:guest@10.10.253.214:5672
   cache:
     type: redis
   cloud:
